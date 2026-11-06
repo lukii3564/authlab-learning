@@ -1,0 +1,352 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+  <title>AuthLab | Authentication</title>
+</head>
+<body>
+  <main class="auth-container" id="auth-container">
+
+    <section class="auth-card">
+
+      <div class="brand">
+        <div class="brand-icon">A</div>
+        <span>AuthLab</span>
+      </div>
+
+      <button id="theme-toggle" class="theme-toggle" type="button"
+              aria-label="Switch to light mode">
+        <span id="theme-toggle-icon" aria-hidden="true">☀</span>
+        <span id="theme-toggle-label">Light mode</span>
+      </button>
+
+      <div class="auth-heading">
+        <h1 id="form-title">Welcome back</h1>
+        <p id="form-subtitle">Sign in to access your account.</p>
+      </div>
+
+      <div class="auth-tabs">
+        <button id="login-tab" class="tab active" type="button">
+          Sign In
+        </button>
+        <button id="register-tab" class="tab" type="button">
+          Create Account
+        </button>
+      </div>
+
+      <form id="auth-form">
+
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+
+          <div class="password-wrapper">
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required
+              minlength="6"
+            >
+            <button type="button" id="toggle-password">
+              Show
+            </button>
+          </div>
+        </div>
+
+        <div id="confirm-password-group" class="form-group hidden">
+          <label for="confirm-password">Confirm password</label>
+          <input
+            type="password"
+            id="confirm-password"
+            placeholder="Confirm your password"
+            autocomplete="new-password"
+            minlength="6"
+          >
+        </div>
+
+        <div class="forgot-password" id="forgot-password">
+          <a href="#" id="forgot-link">Forgot password?</a>
+        </div>
+
+        <div id="auth-message" class="message" role="status"
+             aria-live="polite"></div>
+
+        <button type="submit" id="submit-button" class="submit-btn">
+          Sign In
+        </button>
+
+      </form>
+
+      <p class="footer-text">
+        By continuing, you agree to our Terms of Service.
+      </p>
+
+    </section>
+
+    <p class="copyright">
+      AuthLab &copy; 2026. Built by its Lukii.
+    </p>
+
+  </main>
+
+
+<section class="dashboard-container hidden" id="dashboard-container">
+  <aside class="dashboard-sidebar" id="dashboard-sidebar">
+    <a class="dashboard-brand" href="#dashboard" aria-label="AuthLab dashboard">
+      <span class="dashboard-brand-icon">A</span>
+      <span>AuthLab</span>
+      <span class="brand-plan">WORKSPACE</span>
+    </a>
+
+    <div class="sidebar-section-label">Workspace</div>
+    <nav class="dashboard-nav" aria-label="Main navigation">
+      <a class="nav-link active" href="#dashboard" aria-current="page">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="5" rx="2"/><rect x="13" y="10" width="8" height="11" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/></svg>
+        <span>Dashboard</span>
+      </a>
+      <a class="nav-link" href="#analytics">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5m0 14h16"/><path d="m7 15 4-4 3 2 5-6"/></svg>
+        <span>Analytics</span>
+      </a>
+      <a class="nav-link" href="#users">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0M16 5.5a3 3 0 0 1 0 5.8m1 3.2a5 5 0 0 1 3.5 4.8"/></svg>
+        <span>Users</span><span class="nav-count">2.4k</span>
+      </a>
+      <a class="nav-link" href="#orders">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 9h8M8 13h8m-8 4h4"/></svg>
+        <span>Orders</span>
+      </a>
+      <a class="nav-link" href="#activity">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v12H9l-5 4V5Z"/><path d="M8 9h8m-8 4h5"/></svg>
+        <span>Messages</span><span class="nav-dot" aria-label="Unread messages"></span>
+      </a>
+    </nav>
+
+    <div class="sidebar-section-label sidebar-settings-label">Preferences</div>
+    <nav class="dashboard-nav" aria-label="Preferences">
+      <a class="nav-link" href="#profile-settings">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="m19.4 15 .1.1 1.4 1.1-1.4 2.4-1.7-.7a8 8 0 0 1-1.7 1l-.3 1.8h-2.8l-.3-1.8a8 8 0 0 1-1.7-1l-1.7.7-1.4-2.4 1.4-1.1a7 7 0 0 1 0-2l-1.4-1.1 1.4-2.4 1.7.7a8 8 0 0 1 1.7-1l.3-1.8h2.8l.3 1.8a8 8 0 0 1 1.7 1l1.7-.7 1.4 2.4-1.4 1.1a7 7 0 0 1 0 2Z" transform="translate(-1 -1) scale(.93)"/></svg>
+        <span>Settings</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-spacer"></div>
+    <div class="workspace-card">
+      <span class="workspace-card-icon">✦</span>
+      <div><strong>Pro workspace</strong><span>You're all set up</span></div>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+    </div>
+
+    <div class="sidebar-profile">
+      <div class="sidebar-profile-row">
+        <div class="profile-avatar" id="sidebar-avatar">🙂</div>
+        <div class="sidebar-profile-copy">
+          <strong id="sidebar-profile-name">Your profile</strong>
+          <span id="sidebar-profile-email">Signed in</span>
+        </div>
+      </div>
+      <details class="profile-editor" id="profile-settings">
+        <summary>Edit profile</summary>
+        <div class="profile-editor-content">
+          <div class="profile-avatar-preview" id="profile-avatar-preview" role="img" aria-label="Selected avatar">🙂</div>
+          <div class="form-group">
+            <label for="profile-name">Display name</label>
+            <div class="profile-name-row">
+              <input id="profile-name" type="text" maxlength="80" autocomplete="nickname" placeholder="Your name">
+              <button id="save-profile-name" class="profile-save-button" type="button">Save</button>
+            </div>
+          </div>
+          <fieldset class="avatar-picker">
+            <legend>Choose an avatar</legend>
+            <div class="avatar-options">
+              <button class="avatar-option" type="button" data-avatar="🙂" aria-label="Choose smiling face avatar" aria-pressed="false">🙂</button>
+              <button class="avatar-option" type="button" data-avatar="🦊" aria-label="Choose fox avatar" aria-pressed="false">🦊</button>
+              <button class="avatar-option" type="button" data-avatar="🐼" aria-label="Choose panda avatar" aria-pressed="false">🐼</button>
+              <button class="avatar-option" type="button" data-avatar="🚀" aria-label="Choose rocket avatar" aria-pressed="false">🚀</button>
+              <button class="avatar-option" type="button" data-avatar="🌻" aria-label="Choose sunflower avatar" aria-pressed="false">🌻</button>
+            </div>
+          </fieldset>
+          <p id="profile-message" class="message" role="status" aria-live="polite"></p>
+        </div>
+      </details>
+      <button class="sidebar-logout" id="logout-button" type="button" title="Logout" aria-label="Logout">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 17l5-5-5-5m5 5H3m9-9h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7"/></svg>
+        <span>Logout</span>
+      </button>
+      <p id="logout-message" class="message" role="status" aria-live="polite"></p>
+    </div>
+  </aside>
+  <button class="sidebar-backdrop" id="sidebar-backdrop" type="button" aria-label="Close navigation"></button>
+
+  <main class="dashboard-main" id="dashboard">
+    <header class="dashboard-topbar">
+      <button class="icon-button mobile-menu-button" id="mobile-menu-button" type="button" aria-label="Open navigation" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <div class="topbar-title">
+        <h1>Dashboard Overview</h1>
+        <p id="dashboard-date">Your business at a glance</p>
+      </div>
+      <div class="topbar-actions">
+        <label class="dashboard-search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 4 4"/></svg>
+          <input type="search" id="dashboard-search-input" placeholder="Search anything..." aria-label="Search dashboard">
+          <kbd>⌘ K</kbd>
+        </label>
+        <button class="icon-button notification-button" type="button" aria-label="Notifications">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9m-8 13h4"/></svg>
+          <span class="notification-dot"></span>
+        </button>
+        <details class="topbar-profile-menu">
+          <summary class="topbar-avatar" id="topbar-avatar" aria-label="Open profile menu">🙂</summary>
+          <div class="topbar-menu">
+            <strong id="topbar-profile-name">Your profile</strong>
+            <span id="topbar-profile-email"></span>
+            <a href="#profile-settings">Edit profile</a>
+            <button type="button" id="topbar-logout-button">Sign out</button>
+          </div>
+        </details>
+        <button class="theme-toggle dashboard-mode-toggle" id="dashboard-theme-toggle" type="button" aria-label="Switch to light mode">
+          <span id="dashboard-theme-toggle-icon" aria-hidden="true">☀</span>
+          <span id="dashboard-theme-toggle-label">Light mode</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="dashboard-content">
+      <div class="dashboard-welcome-row">
+        <div>
+          <h2 id="dashboard-greeting-heading" data-time-period="morning">
+            <span id="dashboard-greeting">Good morning</span>
+            <svg class="greeting-time-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <g class="greeting-sunrise">
+                <path d="M3 17h18M5 21h14M7 17a5 5 0 0 1 10 0M12 2v3M4.93 7.93l2.12 2.12M19.07 7.93l-2.12 2.12"/>
+              </g>
+              <g class="greeting-sun">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/>
+              </g>
+              <g class="greeting-moon">
+                <path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5 8.5 8.5 0 1 0 20.5 15.5Z"/>
+              </g>
+            </svg>
+          </h2>
+          <p>Here's what's happening with your workspace today.</p>
+        </div>
+        <span class="sample-data-note"><span></span> Sample analytics</span>
+      </div>
+
+      <div id="verification-notice" class="verification-notice hidden">
+        <div><h2>Verify your email address</h2><p>Your email address has not been verified yet. Please check your inbox and follow the verification link.</p></div>
+        <button id="resend-verification" type="button">Resend verification email</button>
+      </div>
+
+      <section class="kpi-grid" aria-label="Key metrics">
+        <article class="kpi-card">
+          <div class="kpi-card-heading"><span>Total revenue</span><span class="kpi-icon kpi-violet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20m5-15H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span></div>
+          <strong class="kpi-value">$48,294<span class="kpi-decimal">.00</span></strong>
+          <div class="kpi-footer"><span class="metric-change positive">↑ 12.8%</span><span>vs. last month</span><svg class="sparkline sparkline-violet" viewBox="0 0 90 32" aria-hidden="true"><path d="M2 25 14 19 25 22 37 12 48 16 60 8 71 13 88 3"/></svg></div>
+        </article>
+        <article class="kpi-card">
+          <div class="kpi-card-heading"><span>Total users</span><span class="kpi-icon kpi-blue"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0M16 5.5a3 3 0 0 1 0 5.8m1 3.2a5 5 0 0 1 3.5 4.8"/></svg></span></div>
+          <strong class="kpi-value">2,420</strong>
+          <div class="kpi-footer"><span class="metric-change positive">↑ 8.2%</span><span>vs. last month</span><svg class="sparkline sparkline-blue" viewBox="0 0 90 32" aria-hidden="true"><path d="m2 24 12-4 11 5 12-12 12 4 11-8 12 5 16-11"/></svg></div>
+        </article>
+        <article class="kpi-card">
+          <div class="kpi-card-heading"><span>Active projects</span><span class="kpi-icon kpi-amber"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M8 9h8m-8 4h8m-8 4h4"/></svg></span></div>
+          <strong class="kpi-value">184</strong>
+          <div class="kpi-footer"><span class="metric-change negative">↓ 2.4%</span><span>vs. last month</span><svg class="sparkline sparkline-amber" viewBox="0 0 90 32" aria-hidden="true"><path d="m2 5 12 4 11-3 12 9 12-2 11 8 12-2 16 8"/></svg></div>
+        </article>
+        <article class="kpi-card">
+          <div class="kpi-card-heading"><span>Conversion rate</span><span class="kpi-icon kpi-green"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5m0 14h16"/><path d="m7 15 4-4 3 2 5-6"/></svg></span></div>
+          <strong class="kpi-value">6.84<span class="kpi-unit">%</span></strong>
+          <div class="kpi-footer"><span class="metric-change positive">↑ 1.6%</span><span>vs. last month</span><svg class="sparkline sparkline-green" viewBox="0 0 90 32" aria-hidden="true"><path d="m2 25 12-6 11 4 12-11 12 5 11-10 12 5 16-9"/></svg></div>
+        </article>
+      </section>
+
+      <section class="analysis-grid" id="analytics" aria-label="Analytics overview">
+        <article class="surface-card revenue-card">
+          <div class="section-heading">
+            <div><h2>Revenue overview</h2><p>Track your revenue performance over time</p></div>
+            <div class="chart-filter" role="group" aria-label="Revenue chart period">
+              <button class="chart-period active" type="button" data-period="7" disabled>7 days</button>
+              <button class="chart-period" type="button" data-period="30" disabled>30 days</button>
+            </div>
+          </div>
+          <div class="revenue-total"><strong id="chart-total">$12,486</strong><span class="metric-change positive">↑ 12.8%</span><span>vs previous period</span>          </div>
+          <div class="chart-wrap">
+            <canvas class="revenue-chart" id="revenue-chart" role="img" aria-label="Revenue trend over the last 7 days">Revenue trend chart</canvas>
+          </div>
+          <p id="chart-error" class="message" role="status" aria-live="polite"></p>
+        </article>
+        <article class="surface-card traffic-card">
+          <div class="section-heading"><div><h2>Traffic sources</h2><p>Where your visitors come from</p></div><button class="icon-button subtle-icon-button" type="button" aria-label="More traffic options">•••</button></div>
+          <div class="donut-wrap">
+            <div class="donut-chart">
+              <canvas id="traffic-chart" role="img" aria-label="Traffic sources: direct 42%, social media 28%, search engines 18%, referrals 12%">Traffic sources chart</canvas>
+              <div class="donut-center"><strong>24.8k</strong><span>Visitors</span></div>
+            </div>
+          </div>
+          <div class="donut-legend">
+            <div><span class="legend-name"><i class="legend-dot source-direct"></i>Direct</span><strong>42%</strong></div>
+            <div><span class="legend-name"><i class="legend-dot source-social"></i>Social media</span><strong>28%</strong></div>
+            <div><span class="legend-name"><i class="legend-dot source-search"></i>Search engines</span><strong>18%</strong></div>
+            <div><span class="legend-name"><i class="legend-dot source-referral"></i>Referral</span><strong>12%</strong></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="bottom-grid">
+        <article class="surface-card activity-card" id="activity">
+          <div class="section-heading"><div><h2>Recent activity</h2><p>A snapshot of the latest workspace updates</p></div><a class="text-link" href="#orders">View all <span aria-hidden="true">→</span></a></div>
+          <div class="table-scroll">
+            <table class="activity-table" id="orders">
+              <thead><tr><th>Customer</th><th>Status</th><th>Date</th><th class="amount-column">Amount</th></tr></thead>
+              <tbody>
+                <tr><td><span class="customer-cell"><span class="customer-avatar customer-purple">MC</span><span><strong>Madison Chen</strong><small>madison.chen@mail.com</small></span></span></td><td><span class="status-badge status-paid">Paid</span></td><td class="table-date">Nov 06, 2026</td><td class="amount-column amount">$2,450.00</td></tr>
+                <tr><td><span class="customer-cell"><span class="customer-avatar customer-orange">JW</span><span><strong>James Wilson</strong><small>j.wilson@sample.co</small></span></span></td><td><span class="status-badge status-pending">Pending</span></td><td class="table-date">Nov 05, 2026</td><td class="amount-column amount">$1,890.00</td></tr>
+                <tr><td><span class="customer-cell"><span class="customer-avatar customer-blue">SA</span><span><strong>Sofia Alvarez</strong><small>sofia.a@sample.co</small></span></span></td><td><span class="status-badge status-paid">Paid</span></td><td class="table-date">Nov 05, 2026</td><td class="amount-column amount">$3,240.00</td></tr>
+                <tr><td><span class="customer-cell"><span class="customer-avatar customer-green">DK</span><span><strong>Daniel Kim</strong><small>daniel.kim@sample.co</small></span></span></td><td><span class="status-badge status-refunded">Refunded</span></td><td class="table-date">Nov 04, 2026</td><td class="amount-column amount">$680.00</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+        <article class="surface-card performers-card" id="users">
+          <div class="section-heading"><div><h2>Top performers</h2><p>Your best channels this month</p></div><button class="icon-button subtle-icon-button" type="button" aria-label="More performer options">•••</button></div>
+          <div class="performer-list">
+            <div class="performer-row"><div class="performer-title"><span><i class="performer-icon performer-search">⌕</i>Organic search</span><strong>42%</strong></div><div class="progress-track"><span class="progress-fill fill-violet" style="width: 42%"></span></div></div>
+            <div class="performer-row"><div class="performer-title"><span><i class="performer-icon performer-social">◎</i>Social media</span><strong>28%</strong></div><div class="progress-track"><span class="progress-fill fill-blue" style="width: 28%"></span></div></div>
+            <div class="performer-row"><div class="performer-title"><span><i class="performer-icon performer-direct">↗</i>Direct traffic</span><strong>18%</strong></div><div class="progress-track"><span class="progress-fill fill-amber" style="width: 18%"></span></div></div>
+            <div class="performer-row"><div class="performer-title"><span><i class="performer-icon performer-referral">↗</i>Referrals</span><strong>12%</strong></div><div class="progress-track"><span class="progress-fill fill-green" style="width: 12%"></span></div></div>
+          </div>
+          <a class="quick-action" href="#profile-settings"><span class="quick-action-icon">＋</span><span><strong>Personalize your workspace</strong><small>Update your profile and avatar</small></span><span class="quick-action-arrow">→</span></a>
+        </article>
+      </section>
+
+      <section class="surface-card account-details-card">
+        <div class="section-heading"><div><h2>Account details</h2><p>Your authenticated Firebase account information</p></div></div>
+        <div class="user-details"><p>Email: <span id="user-email"></span></p><p>Firebase UID: <span id="user-uid"></span></p></div>
+      </section>
+      <footer class="dashboard-footer">© 2026 AuthLab <span>·</span> Built for your workspace</footer>
+    </div>
+  </main>
+</section>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
